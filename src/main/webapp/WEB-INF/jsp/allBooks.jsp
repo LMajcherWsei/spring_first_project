@@ -19,25 +19,29 @@
         <div class="container">
           <h1>All Books</h1>
           <a href="/books/addNew">Add New Book</a>
-          <table>
-            <tr>
-              <!-- <th>Id</th> -->
-              <th>Title</th>
-              <th>Author</th>
-              <th>Price</th>
-              <th>Edit</th>
-              <th>Delete</th>
-            </tr>
-            <c:forEach items="${books}" var="book">
+          <table class="table table-hover">
+            <thead>
               <tr>
-                <!-- <td>${book.id}.</td> -->
-                <td>${book.title}</td>
-                <td>${book.author}</td>
-                <td>${book.price}</td>
-                <td><a href="/books/edit/${book.id}">Edit</a></td>
-                <td><a href="/books/delete/${book.id}">Delete</a></td>
+                <!-- <th>Id</th> -->
+                <th>Title</th>
+                <th>Author</th>
+                <th>Price</th>
+                <th>Edit</th>
+                <th>Delete</th>
               </tr>
-            </c:forEach>
+            </thead>
+            <tbody>
+              <c:forEach items="${books}" var="book">
+                <tr>
+                  <!-- <td>${book.id}.</td> -->
+                  <td>${book.title}</td>
+                  <td>${book.author}</td>
+                  <td>${book.price}</td>
+                  <td><a href="/books/edit/${book.id}">Edit</a></td>
+                  <td><a href="/books/delete/${book.id}">Delete</a></td>
+                </tr>
+              </c:forEach>
+            </tbody>
           </table>
         </div>
       </div>

@@ -16,23 +16,29 @@
         <div class="container">
           <h1>All Expenses</h1>
           <a href="/expenses/addNew">Add New Expense</a>
-          <table>
-            <tr>
-              <!-- <th>Id</th> -->
-              <th>Name</th>
-              <th>Price</th>
-              <th>Date</th>
-            </tr>
-            <c:forEach items="${expenses}" var="expense">
+          <table class="table table-hover">
+            <thead>
               <tr>
-                <!-- <td>${expense.id}.</td> -->
-                <td>${expense.name}</td>
-                <td>${expense.price}</td>
-                <td>${expense.date}</td>
-                <td><a href="/expenses/edit/${expense.id}">Edit</a></td>
-                <td><a href="/expenses/delete/${expense.id}">Delete</a></td>
+                <!-- <th>Id</th> -->
+                <th>Name</th>
+                <th>Price</th>
+                <th>Date</th>
+                <th>Edit</th>
+                <th>Delete</th>
               </tr>
-            </c:forEach>
+            </thead>
+            <tbody>
+              <c:forEach items="${expenses}" var="expense">
+                <tr>
+                  <!-- <td>${expense.id}.</td> -->
+                  <td>${expense.name}</td>
+                  <td>${expense.price}</td>
+                  <td>${expense.date}</td>
+                  <td><a href="/expenses/edit/${expense.id}">Edit</a></td>
+                  <td><a href="/expenses/delete/${expense.id}">Delete</a></td>
+                </tr>
+              </c:forEach>
+            </tbody>
           </table>
         </div>
       </div>

@@ -17,23 +17,23 @@
           <h1>Add new book</h1>
           <form:form modelAttribute="form" action="/books/save">
             <form:errors path="" element="div" />
-            <div>
+            <div class="form-group">
               <form:label path="title">Title</form:label>
-              <form:input path="title" />
+              <form:input path="title" class="form-control" placeholder="Enter title" />
               <form:errors path="title" />
             </div>
-            <div>
+            <div class="form-group">
               <form:label path="author">Author</form:label>
-              <form:input path="author" />
+              <form:input path="author" class="form-control" placeholder="Enter author" />
               <form:errors path="author" />
             </div>
-            <div>
+            <div class="form-group">
               <form:label path="price">Price</form:label>
-              <form:input type="number" step="0.01" path="price" />
+              <form:input type="number" step="0.01" path="price" class="form-control" placeholder="Enter price" />
               <form:errors path="price" />
             </div>
             <div>
-              <input type="submit" />
+              <button type="submit" class="btn btn-primary">Submit</button>
             </div>
           </form:form>
         </div>
