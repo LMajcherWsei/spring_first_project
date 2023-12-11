@@ -25,7 +25,7 @@ public class BooksController {
         if (book != null) {
             booksData.save(book);
         }
-        return ("redirect:/books/list");
+        return ("redirect:/books");
     }
 
     @RequestMapping(value = "/addNew", method = RequestMethod.GET)
@@ -34,11 +34,18 @@ public class BooksController {
         return new ModelAndView("addBook", "form", book);
     }
 
-    @RequestMapping(value = "/list", method = RequestMethod.GET)
+    @RequestMapping(method = RequestMethod.GET)
     public ModelAndView books() {
         List<Book> allBooks = booksData.findAll();
         return new ModelAndView("allBooks", "books", allBooks);
     }
+
+    // Changed default site to /books from /books/list
+    // @RequestMapping(value = "/list", method = RequestMethod.GET)
+    // public ModelAndView books() {
+    // List<Book> allBooks = booksData.findAll();
+    // return new ModelAndView("allBooks", "books", allBooks);
+    // }
 
     @RequestMapping(value = "/delete/{id}", method = RequestMethod.GET)
     public String deleteBook(@PathVariable long id) {
@@ -48,7 +55,7 @@ public class BooksController {
             booksData.delete(book.get());
         }
 
-        return ("redirect:/books/list");
+        return ("redirect:/books");
     }
 
     @RequestMapping(value = "/edit/{id}", method = RequestMethod.GET)
